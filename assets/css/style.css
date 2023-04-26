@@ -3,6 +3,12 @@ body {
   background-color: rgb(45, 45, 45);
   font-family: 'Maven Pro', sans-serif;
 }
+
+a { 
+  text-decoration: none;
+  color: black;
+}
+
 header{
   width: 100%;
   height: 400px;
@@ -42,4 +48,62 @@ header nav h1 {
   color: white;
   line-height: 1.5;
   letter-spacing: 10px;
+}
+
+section {
+  margin: 15px;
+  margin-top: 80px;
+}
+
+.box_heroi {
+  display: inline-block;
+  width: 300px;
+  height: 380px;
+  padding: 15px;
+  margin: 30px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 5px;
+  border-style: 1px solid silver;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.box_heroi:hover {
+  background-color: rgb(228, 45, 45);
+  color: white;
+}
+
+.box_heroi:hover .atribuicao{
+  color: white;
+}
+
+.img_heroi {
+  width: 150px;
+  height: 150px;
+  background-color: silver;
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: 25%;
+  transition: 0.5s;
+}
+
+.img_heroi:hover {
+  padding: 5%;
+  margin-left: 20%;
+}
+
+.nome_heroi {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+.desc_heroi {
+  text-align: justify;
+  font-size: 12px;
+}
+
+.atribuicao {
+  text-align: center;
+  font-size: 10px;
 }

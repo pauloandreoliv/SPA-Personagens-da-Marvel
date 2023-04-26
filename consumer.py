@@ -59,5 +59,3 @@ def listing(offset, past_requests, characters):
             listing(offset, past_requests, characters)
             
         k += 1
-        
-listing(0,0, [])
