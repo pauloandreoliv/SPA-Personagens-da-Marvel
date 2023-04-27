@@ -46,17 +46,17 @@ def listing(offset, past_requests, characters):
         extension_thumbnail = results_list[cont]["thumbnail"]["extension"]
         thumbnail = path_thumbnail + "." + extension_thumbnail
 
-        character = []
-        character.append(name)
-        character.append(description)
-        character.append(thumbnail)
+        character = {}
+        character["name"] = name
+        character["description"] = description
+        character["thumbnail"] = thumbnail
         
         characters.append(character)
 
         if cont == 99:
             past_requests += 1
             if past_requests == (number_requests - 1):
-                return characters_list
+                return characters
             offset = past_requests * 100
             return listing(offset, past_requests, characters)
             

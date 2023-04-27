@@ -13,23 +13,24 @@
 <body>
   <header>
     <nav>
-      <a href=""> INÍCIO</a>
-      <a href="" id="menu_personagens">PERSONAGENS</a>
-      <a href="">PESQUISAR</a>
+      <a href="#"> INÍCIO</a>
+      <a href="#1" id="menu_personagens">PERSONAGENS</a>
+      <a href="#2">PESQUISAR</a>
     </nav>
     <div id="logo"></div>
   </header>
   <main>
     <h1>PERSONAGENS</h1>
-    <section class="personagens">
+    <section class="personagens" id="1">
+      {%for character in characters%}
       <div class="personagem">
         <div class="topo_personagem">
-        <div class="imagem_personagem" style="background-image: url(http://i.annihil.us/u/prod/marvel/i/mg/d/d0/5269657a74350.jpg);"></div>
+        <div class="imagem_personagem" style="background-image: url({{character["thumbnail"]}});"></div>
         </div>
-        <div class="nome_personagem">Thor</div>
-        <div class="desc_personagem">As the Norse God of thunder and lightning, Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate.  He's self-assured, and he would never, ever stop fighting for a worthwhile cause.</div>
-        <div class="btn_vermais">VER MAIS</div>
+        <div class="nome_personagem">{{character["name"]}}</div>
+        <div class="desc_personagem">{{character["description"]}}</div>
       </div>
+      {%endfor%}
    </section>
   </main>
 </body>

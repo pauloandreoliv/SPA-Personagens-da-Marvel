@@ -65,6 +65,12 @@ nav #menu_personagens {
   height: 100.5px;
   background-image: url(https://pauloandreoliv.github.io/SPA-Personagens-da-Marvel/assets/images/Marvel_Logo_SVG.svg);
   background-size: cover;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#logo:hover {
+  opacity: 0.5;
 }
 
 h1 {
@@ -93,8 +99,7 @@ h1 {
   height: 90px;
   margin-bottom: 70px;
   padding-top: 15px;
-  background-image: url(https://pauloandreoliv.github.io/SPA-Personagens-da-Marvel/assets/images/header.jpg);
-  background-size: cover;
+  background: #dd4444;
 }
 
 .personagem .topo_personagem .imagem_personagem {
@@ -121,25 +126,9 @@ h1 {
 
 .personagem .desc_personagem {
   box-shadow: inset;
-  height: 80px;
+  height: 90px;
   padding: 10px;
   font-size: 14px;
-  overflow: hidden;
+  overflow-y: scroll;
   text-align: justify;
-}
-
-.personagem .btn_vermais {
-    width: 80px;
-    padding: 5px;
-    margin-left: 100px;
-    font-size: 14px;
-    color: white;
-    background-color: rgb(221, 68, 68);
-    text-align: center;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.personagem .btn_vermais:hover {
-    background-color: rgb(168, 53, 53);
 }
