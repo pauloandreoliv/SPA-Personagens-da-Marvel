@@ -132,3 +132,20 @@ h1 {
   overflow-y: scroll;
   text-align: justify;
 }
+
+.botoes {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    margin: 3px;
+    border-radius: 50%;
+    border: 2px solid silver;
+    background-color: transparent;
+    color: silver;
+    cursor: pointer;
+}

@@ -14,8 +14,8 @@ md5.update(string.encode('utf-8'))
 md5_hash = md5.hexdigest()
 
 
-def request(offset):
-    request_url = f"https://gateway.marvel.com:443/v1/public/characters?limit=100&offset={offset}&apikey={public_key}&ts={timestamp}&hash={md5_hash}"
+def request(offset,limit):
+    request_url = f"https://gateway.marvel.com:443/v1/public/characters?limit={limit}&offset={offset}&apikey={public_key}&ts={timestamp}&hash={md5_hash}"
     request_return = requests.get(request_url)
     result = request_return.json()
 
@@ -24,12 +24,12 @@ def request(offset):
     return data_list
 
 
-def listing(offset, past_requests, characters):
+def listing_all(offset, past_requests, characters):
     past_requests = past_requests
 
     characters = characters
     
-    data_list = request(offset)
+    data_list = request(offset,100)
 
     results_list = data_list["results"]
     total = data_list["total"]
@@ -58,6 +58,34 @@ def listing(offset, past_requests, characters):
             if past_requests == (number_requests - 1):
                 return characters
             offset = past_requests * 100
-            return listing(offset, past_requests, characters)
+            return listing_all(offset, past_requests, characters)
+            
+        cont += 1
+
+def listing(offset):
+    characters = []
+    
+    data_list = request(offset,20)
+
+    results_list = data_list["results"]
+
+    cont = 0
+    
+    while cont < len(results_list):
+        name = results_list[cont]["name"]
+        description = results_list[cont]["description"]
+        path_thumbnail = results_list[cont]["thumbnail"]["path"]
+        extension_thumbnail = results_list[cont]["thumbnail"]["extension"]
+        thumbnail = path_thumbnail + "." + extension_thumbnail
+
+        character = {}
+        character["name"] = name
+        character["description"] = description
+        character["thumbnail"] = thumbnail
+        
+        characters.append(character)
+
+        if cont == 19:
+            return characters
             
         cont += 1
