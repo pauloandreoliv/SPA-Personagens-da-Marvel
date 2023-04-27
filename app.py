@@ -23,4 +23,8 @@ def list_all():
     characters = listing_all(0,0,[])
     return render_template("index.html", characters = characters)
 
+@app.route("/search", methods=["POST"])
+def search():
+    return render_template("index.html")
+
 app.run()
