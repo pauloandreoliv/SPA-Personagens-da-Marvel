@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from consumer import listing
 
 app = Flask(__name__)
 

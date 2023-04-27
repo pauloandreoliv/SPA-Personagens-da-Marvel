@@ -25,6 +25,10 @@ def request(offset):
 
 
 def listing(offset, past_requests, characters):
+    past_requests = past_requests
+
+    characters = characters
+    
     data_list = request(offset)
 
     results_list = data_list["results"]
@@ -33,29 +37,27 @@ def listing(offset, past_requests, characters):
     number_requests = total / 100
     number_requests = math.ceil(number_requests)
 
-    past_requests = past_requests
+    cont = 0
     
-    k = 0
-
-    characters = characters
-    
-    while k < len(results_list) and past_requests < number_requests:
-        name = results_list[k]["name"]
-        description = results_list[k]["description"]
-        path_thumbnail = results_list[k]["thumbnail"]["path"]
-        extension_thumbnail = results_list[k]["thumbnail"]["extension"]
+    while cont < len(results_list) and past_requests < number_requests:
+        name = results_list[cont]["name"]
+        description = results_list[cont]["description"]
+        path_thumbnail = results_list[cont]["thumbnail"]["path"]
+        extension_thumbnail = results_list[cont]["thumbnail"]["extension"]
         thumbnail = path_thumbnail + "." + extension_thumbnail
 
         character = []
         character.append(name)
         character.append(description)
         character.append(thumbnail)
-
+        
         characters.append(character)
 
-        if k == 99:
+        if cont == 99:
             past_requests += 1
+            if past_requests == (number_requests - 1):
+                return characters_list
             offset = past_requests * 100
-            listing(offset, past_requests, characters)
+            return listing(offset, past_requests, characters)
             
-        k += 1
+        cont += 1
