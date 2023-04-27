@@ -1,6 +1,10 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  background-color: rgb(45, 45, 45);
+  background-color: white;
   font-family: 'Maven Pro', sans-serif;
 }
 
@@ -9,23 +13,51 @@ a {
   color: black;
 }
 
-header{
+header{  
+  display: flex;
   width: 100%;
-  height: 400px;
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  display: flex;
 }
 
 header::before{
   width: 100%;
-  height: 400px;
+  height: 100vh;
   content: "";
   z-index: -1;
   position: absolute;
   background-image: url(https://pauloandreoliv.github.io/SPA-Personagens-da-Marvel/assets/images/header.jpg);
   background-size: cover;
   filter: blur(5px);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100px;
+  padding-top: 20px;
+  text-align: center;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+
+nav a {
+  font-size: 16px;
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: white;
+  transition: 0.1s;
+}
+
+nav a:hover {
+  font-weight: 500;
+  border-bottom: 2px solid red;
+}
+
+nav #menu_personagens {
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 #logo {
@@ -35,75 +67,79 @@ header::before{
   background-size: cover;
 }
 
-header nav {
-  width: 100%;
-  height: 80px;
-  margin-top: 400px;
-  position: absolute;
-  background-color: black;
+h1 {
+  margin-top: 100px;
+  letter-spacing: 10px;
   text-align: center;
 }
 
-header nav h1 {
-  color: white;
-  line-height: 1.5;
-  letter-spacing: 10px;
+.personagens {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-section {
-  margin: 15px;
-  margin-top: 80px;
-}
-
-.box_heroi {
-  display: inline-block;
+.personagem {
+  display: inline;
   width: 300px;
-  height: 380px;
-  padding: 15px;
-  margin: 30px;
-  overflow: hidden;
-  background-color: white;
-  border-radius: 5px;
-  border-style: 1px solid silver;
-  cursor: pointer;
-  transition: 0.5s;
+  height: 350px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+  border: 1px solid #DADADA;
 }
 
-.box_heroi:hover {
-  background-color: rgb(228, 45, 45);
-  color: white;
+.personagem .topo_personagem {
+  width: 100%;
+  height: 90px;
+  margin-bottom: 70px;
+  padding-top: 15px;
+  background-image: url(https://pauloandreoliv.github.io/SPA-Personagens-da-Marvel/assets/images/header.jpg);
+  background-size: cover;
 }
 
-.box_heroi:hover .atribuicao{
-  color: white;
-}
-
-.img_heroi {
+.personagem .topo_personagem .imagem_personagem {
   width: 150px;
   height: 150px;
-  background-color: silver;
-  background-size: cover;
+  margin-left: 75px;
   border-radius: 50%;
-  margin-left: 25%;
-  transition: 0.5s;
+  background-size: cover;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.img_heroi:hover {
-  padding: 5%;
-  margin-left: 20%;
+.personagem .topo_personagem .imagem_personagem:hover {
+  padding: 5px;
+  margin-left: 70px;
 }
 
-.nome_heroi {
-  text-align: center;
+.personagem .nome_personagem {
   font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
   font-weight: 600;
 }
-.desc_heroi {
+
+.personagem .desc_personagem {
+  box-shadow: inset;
+  height: 80px;
+  padding: 10px;
+  font-size: 14px;
+  overflow: hidden;
   text-align: justify;
-  font-size: 12px;
 }
 
-.atribuicao {
-  text-align: center;
-  font-size: 10px;
+.personagem .btn_vermais {
+    width: 80px;
+    padding: 5px;
+    margin-left: 100px;
+    font-size: 14px;
+    color: white;
+    background-color: rgb(221, 68, 68);
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.personagem .btn_vermais:hover {
+    background-color: rgb(168, 53, 53);
 }
