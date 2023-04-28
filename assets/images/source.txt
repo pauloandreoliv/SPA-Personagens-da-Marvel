@@ -7,4 +7,4 @@ Character (https://estacaonerd.com/diversas-producoes-da-marvel-studios-tem-data
 Hospedadas em:
 https://i.imgur.com/QN8GUmf.jpg
 https://i.imgur.com/8IPyQTr.jpg
-https://static.wikia.nocookie.net/marveldatabase/images/4/4a/Marvel_Logo_SVG.svg/revision/latest
+https://raw.githubusercontent.com/pauloandreoliv/SPA-Personagens-da-Marvel/2909c8b7f2b4b189231008d3ccb99581bb0988fc/assets/images/Marvel_Logo_SVG.svg?token=AY47IH3KSO2SEHBX7BTSLOTEJQSGM

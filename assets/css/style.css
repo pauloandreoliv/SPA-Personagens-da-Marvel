@@ -63,7 +63,7 @@ nav #menu_personagens {
 #logo {
   width: 250px;
   height: 100.5px;
-  background-image: url(https://static.wikia.nocookie.net/marveldatabase/images/4/4a/Marvel_Logo_SVG.svg/revision/latest);
+  background-image: url(https://raw.githubusercontent.com/pauloandreoliv/SPA-Personagens-da-Marvel/2909c8b7f2b4b189231008d3ccb99581bb0988fc/assets/images/Marvel_Logo_SVG.svg?token=AY47IH3KSO2SEHBX7BTSLOTEJQSGM);
   background-size: cover;
   cursor: pointer;
   transition: 0.5s;
@@ -169,4 +169,44 @@ input {
 
 input:hover {
     border-bottom: 2px solid red;
+}
+
+.personagem_pesquisado  {
+  width: 300px;
+  height: fit-content;
+  padding-top: 15px;
+}
+
+.personagem_pesquisado  .topo_personagem .imagem_personagem {
+  width: 200px;
+  height: 200px;
+  margin-left: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.personagem_pesquisado  .topo_personagem .imagem_personagem:hover {
+  padding: 5px;
+  margin-left: 45px;
+}
+
+.personagem_pesquisado  .nome_personagem {
+  padding-top: 15px;
+  font-size: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.personagem_pesquisado  .desc_personagem {
+  box-shadow: inset;
+  padding: 10px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.personagem_pesquisado h3 {
+  text-align: center;
 }
