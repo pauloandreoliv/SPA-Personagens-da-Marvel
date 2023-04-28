@@ -44,13 +44,13 @@ nav {
 
 nav a {
   font-size: 16px;
-  padding-bottom: 5px;
   text-decoration: none;
   color: white;
-  transition: 0.1s;
+  transition: 0.2s;
 }
 
 nav a:hover {
+  padding-bottom: 5px;
   font-weight: 500;
   border-bottom: 2px solid red;
 }
@@ -79,7 +79,7 @@ h1 {
   text-align: center;
 }
 
-.personagens {
+section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -142,20 +142,31 @@ h1 {
 button {
     width: 40px;
     height: 40px;
-    font-size: 30px;
+    font-size: 20px;
     margin: 3px;
     border-radius: 50%;
     border: 2px solid silver;
     background-color: transparent;
     color: silver;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: silver;
+    color: white;
 }
 
 input {
-    min-width: 400px;
+    min-width: 285px;
     padding: 15px;
     border: none;
     border-bottom: 2px solid silver;
     background: transparent;
     color: rgb(168, 167, 167);
+    transition: 0.5s;
+}
+
+input:hover {
+    border-bottom: 2px solid red;
 }

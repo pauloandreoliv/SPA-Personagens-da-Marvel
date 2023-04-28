@@ -102,28 +102,28 @@ def listing(offset):
 
 def search(name):
     result = {}
-    
-    name = "&name=" + name
-    
-    data_list = request(0,1,name)
 
-    total = data_list["total"]
+    result["name"] = "Not found"
+    result["description"] = "Try again"
+    result["thumbnail"] = "https://i.imgur.com/QN8GUmf.jpg"
     
-    if total == 0:
-        result["name"] = "Not found"
-        result["description"] = "Try again"
-        result["thumbnail"] = "https://i.imgur.com/QN8GUmf.jpg"
-    else:
-        results_list = data_list["results"]
+    if (name != ""):
+        name = "&name=" + name
         
-        name = results_list[0]["name"]
-        description = results_list[0]["description"]
-        path_thumbnail = results_list[0]["thumbnail"]["path"]
-        extension_thumbnail = results_list[0]["thumbnail"]["extension"]
-        thumbnail = path_thumbnail + "." + extension_thumbnail
+        data_list = request(0,1,name)
 
-        result["name"] = name
-        result["description"] = description
-        result["thumbnail"] = thumbnail
+        total = data_list["total"]
         
+        if total == 1:
+            results_list = data_list["results"]
+            
+            name = results_list[0]["name"]
+            description = results_list[0]["description"]
+            path_thumbnail = results_list[0]["thumbnail"]["path"]
+            extension_thumbnail = results_list[0]["thumbnail"]["extension"]
+            thumbnail = path_thumbnail + "." + extension_thumbnail
+
+            result["name"] = name
+            result["description"] = description
+            result["thumbnail"] = thumbnail
     return result

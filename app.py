@@ -8,7 +8,8 @@ offset = 0
 @app.route("/")
 def index():
     characters = listing(offset)
-    return render_template("index.html", characters = characters)
+    character = {"name": "Not found", "description": "Try again", "thumbnail": "https://i.imgur.com/QN8GUmf.jpg"}
+    return render_template("index.html", characters = characters, character = character)
 
 
 @app.route("/advance", methods=["POST"])
