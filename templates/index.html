@@ -40,6 +40,13 @@
       </div>
       {%endfor%}
    </section>
+   <h1>PESQUISAR</h1>
+   <section>
+     <form action="{{url_for('search_for')}}" method="POST">
+       <input type="text" id="character_name" name="character_name" placeholder="Escreva o nome do personagem em Inglês">
+       <button></button>
+     </form>
+   </section>
   </main>
 </body>
 </html>

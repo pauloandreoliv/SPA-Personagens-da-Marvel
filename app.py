@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-from consumer import listing_all, listing
+from flask import Flask, render_template, request
+from consumer import listing_all, listing, search
 
 app = Flask(__name__)
 
@@ -23,8 +23,10 @@ def list_all():
     characters = listing_all(0,0,[])
     return render_template("index.html", characters = characters)
 
-@app.route("/search", methods=["POST"])
-def search():
-    return render_template("index.html")
+@app.route("/search_for", methods=["POST"])
+def search_for():
+    name = request.form["character_name"]
+    character = search(name)
+    return render_template("index.html", character = character)
 
 app.run()
