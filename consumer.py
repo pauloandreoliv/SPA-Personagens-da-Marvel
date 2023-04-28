@@ -102,8 +102,8 @@ def listing(offset):
 def search(name):
     result = {}
 
-    result["name"] = "Not found"
-    result["description"] = "Try again"
+    result["name"] = "Não foi possível encontrar"
+    result["description"] = "Tente novamente"
     result["thumbnail"] = "https://i.imgur.com/QN8GUmf.jpg"
     result["comics"] = {"name": ""}
     

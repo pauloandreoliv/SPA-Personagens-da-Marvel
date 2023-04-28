@@ -21,7 +21,7 @@
     <div id="logo"></div>
   </header>
   <main>
-    <h1>PERSONAGENS</h1>
+    <h1 id="1">PERSONAGENS</h1>
     <div class="botoes">
       <form action="{{url_for('list_all')}}" method="POST">
       	<button type="submit" name="list_all" id="list_all"><i class="fa fa-list"></i></button>
@@ -30,7 +30,7 @@
       	<button type="submit" name="advance" id="advance"><i class="fa-solid fa-arrow-right"></i></button>
       </form>
     </div>
-    <section id="1">
+    <section>
       {%for character in characters%}
       <div class="personagem">
         <div class="topo_personagem">
@@ -38,17 +38,19 @@
         </div>
         <div class="nome_personagem">{{character["name"]}}</div>
         <div class="desc_personagem">{{character["description"]}}</div>
+        <a href="https://www.google.com/search?q={{character["name"]}}"><div class="buscar_google"><i class="fa-brands fa-google"></i> BUSCAR NO GOOGLE</div></a>
       </div>
       {%endfor%}
    </section>
-   <h1>PESQUISAR</h1>
+   <h1 id="2">PESQUISAR</h1>
    <div class="pesquisar">
      <form action="{{url_for('search_for')}}" method="POST">
        <input type="text" id="character_name" name="character_name" placeholder="Escreva o nome do personagem em Inglês">
        <button><i class="fa-solid fa-magnifying-glass"></i></button>
      </form>
    </div>
-   <section id="2">
+   <section>
+     {%if searching == True%}
      <div class="personagem_pesquisado">
         <div class="topo_personagem">
           <div class="imagem_personagem" style="background-image: url({{character["thumbnail"]}});"></div>
@@ -64,7 +66,14 @@
           </ol>
         </div>
      </div>
+     {%endif%}
    </section>
   </main>
+  <footer>
+    <div id="desenvolvedor">
+        <a href="\&quot;http://marvel.com\&quot;">Data provided by Marvel. © 2023 MARVEL</a><br>
+        <a href="https://github.com/pauloandreoliv">Clone desenvolvido por <i class="fa-brands fa-github"></i> pauloandreoliv</a>
+    </div>
+  </footer>
 </body>
 </html>

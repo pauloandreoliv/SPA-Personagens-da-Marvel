@@ -215,3 +215,23 @@ input:hover {
 .personagem_pesquisado h3 {
   text-align: center;
 }
+
+footer {
+  display: flex;
+  margin-top: 50px;
+  padding: 15px;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.btn_buscargoogle {
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #dd4444;
+  transition: 0.3s;
+}
+
+.btn_buscargoogle:hover {
+  opacity: 0.5;
+}
