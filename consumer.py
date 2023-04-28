@@ -46,6 +46,9 @@ def listing_all(offset, past_requests, characters):
         extension_thumbnail = results_list[cont]["thumbnail"]["extension"]
         thumbnail = path_thumbnail + "." + extension_thumbnail
 
+        if description == "":
+            description = "Character has no description."
+        
         character = {}
         character["name"] = name
         character["description"] = description
@@ -55,12 +58,15 @@ def listing_all(offset, past_requests, characters):
 
         if cont == 99:
             past_requests += 1
+            
             if past_requests == (number_requests - 1):
                 return characters
+            
             offset = past_requests * 100
             return listing_all(offset, past_requests, characters)
             
         cont += 1
+
 
 def listing(offset):
     characters = []
@@ -77,7 +83,10 @@ def listing(offset):
         path_thumbnail = results_list[cont]["thumbnail"]["path"]
         extension_thumbnail = results_list[cont]["thumbnail"]["extension"]
         thumbnail = path_thumbnail + "." + extension_thumbnail
-
+        
+        if description == "":
+            description = "Character has no description."
+        
         character = {}
         character["name"] = name
         character["description"] = description
