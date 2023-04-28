@@ -102,6 +102,7 @@ def listing(offset):
 
 def search(name):
     result = {}
+    
     name = "&name=" + name
     
     data_list = request(0,1,name)
