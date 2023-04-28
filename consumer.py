@@ -14,8 +14,8 @@ md5.update(string.encode('utf-8'))
 md5_hash = md5.hexdigest()
 
 
-def request(offset,limit):
-    request_url = f"https://gateway.marvel.com:443/v1/public/characters?limit={limit}&offset={offset}&apikey={public_key}&ts={timestamp}&hash={md5_hash}"
+def request(offset,limit,name):
+    request_url = f"https://gateway.marvel.com:443/v1/public/characters?limit={limit}&offset={offset}&apikey={public_key}&ts={timestamp}&hash={md5_hash}" + name
     request_return = requests.get(request_url)
     result = request_return.json()
 
@@ -29,7 +29,7 @@ def listing_all(offset, past_requests, characters):
 
     characters = characters
     
-    data_list = request(offset,100)
+    data_list = request(offset,100,"")
 
     results_list = data_list["results"]
     total = data_list["total"]
@@ -71,7 +71,7 @@ def listing_all(offset, past_requests, characters):
 def listing(offset):
     characters = []
     
-    data_list = request(offset,20)
+    data_list = request(offset,20,"")
 
     results_list = data_list["results"]
 
@@ -98,3 +98,31 @@ def listing(offset):
             return characters
             
         cont += 1
+
+
+def search(name):
+    result = {}
+    name = "&name=" + name
+    
+    data_list = request(0,1,name)
+
+    total = data_list["total"]
+    
+    if total == 0:
+        result["name"] = "Not found"
+        result["description"] = "Try again"
+        result["thumbnail"] = "https://i.imgur.com/QN8GUmf.jpg"
+    else:
+        results_list = data_list["results"]
+        
+        name = results_list[0]["name"]
+        description = results_list[0]["description"]
+        path_thumbnail = results_list[0]["thumbnail"]["path"]
+        extension_thumbnail = results_list[0]["thumbnail"]["extension"]
+        thumbnail = path_thumbnail + "." + extension_thumbnail
+
+        result["name"] = name
+        result["description"] = description
+        result["thumbnail"] = thumbnail
+        
+    return result
