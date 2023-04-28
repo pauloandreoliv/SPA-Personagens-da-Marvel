@@ -27,7 +27,7 @@ header::before{
   content: "";
   z-index: -1;
   position: absolute;
-  background-image: url(https://pauloandreoliv.github.io/SPA-Personagens-da-Marvel/assets/images/header.jpg);
+  background-image: url(https://i.imgur.com/8IPyQTr.jpg);
   background-size: cover;
   filter: blur(5px);
 }
@@ -63,7 +63,7 @@ nav #menu_personagens {
 #logo {
   width: 250px;
   height: 100.5px;
-  background-image: url(https://pauloandreoliv.github.io/SPA-Personagens-da-Marvel/assets/images/Marvel_Logo_SVG.svg);
+  background-image: url(https://static.wikia.nocookie.net/marveldatabase/images/4/4a/Marvel_Logo_SVG.svg/revision/latest);
   background-size: cover;
   cursor: pointer;
   transition: 0.5s;
@@ -74,7 +74,7 @@ nav #menu_personagens {
 }
 
 h1 {
-  margin-top: 100px;
+  margin-top: 150px;
   letter-spacing: 10px;
   text-align: center;
 }
@@ -134,6 +134,7 @@ h1 {
 }
 
 .botoes {
+    margin: 10px;
     display: flex;
     justify-content: center;
 }
@@ -148,4 +149,13 @@ button {
     background-color: transparent;
     color: silver;
     cursor: pointer;
+}
+
+input {
+    min-width: 400px;
+    padding: 15px;
+    border: none;
+    border-bottom: 2px solid silver;
+    background: transparent;
+    color: rgb(168, 167, 167);
 }
