@@ -20,7 +20,6 @@ def request(offset,limit,name):
     result = request_return.json()
 
     data_list = result["data"]
-
     return data_list
 
 
@@ -106,6 +105,7 @@ def search(name):
     result["name"] = "Not found"
     result["description"] = "Try again"
     result["thumbnail"] = "https://i.imgur.com/QN8GUmf.jpg"
+    result["comics"] = {"name": ""}
     
     if (name != ""):
         name = "&name=" + name
@@ -123,7 +123,10 @@ def search(name):
             extension_thumbnail = results_list[0]["thumbnail"]["extension"]
             thumbnail = path_thumbnail + "." + extension_thumbnail
 
+            comics_list = results_list[0]["comics"]["items"]
+            
             result["name"] = name
             result["description"] = description
             result["thumbnail"] = thumbnail
+            result["comics"] = comics_list
     return result

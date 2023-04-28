@@ -63,7 +63,7 @@ nav #menu_personagens {
 #logo {
   width: 250px;
   height: 100.5px;
-  background-image: url(https://raw.githubusercontent.com/pauloandreoliv/SPA-Personagens-da-Marvel/2909c8b7f2b4b189231008d3ccb99581bb0988fc/assets/images/Marvel_Logo_SVG.svg?token=AY47IH3KSO2SEHBX7BTSLOTEJQSGM);
+  background-image: url(https://i.imgur.com/GiR22m8.png);
   background-size: cover;
   cursor: pointer;
   transition: 0.5s;
@@ -155,6 +155,11 @@ button {
 button:hover {
     background-color: silver;
     color: white;
+}
+
+.pesquisar{
+    display: flex;
+    justify-content: center;
 }
 
 input {

@@ -8,7 +8,7 @@ offset = 0
 @app.route("/")
 def index():
     characters = listing(offset)
-    character = {"name": "Not found", "description": "Try again", "thumbnail": "https://i.imgur.com/QN8GUmf.jpg"}
+    character = {"name": "SEM PERSONAGEM", "description": "Procure algum personagem. Basta inserir o nome do(a) personagem desejado em Inglês. Ex: Captain America", "thumbnail": "https://i.imgur.com/QN8GUmf.jpg"}
     return render_template("index.html", characters = characters, character = character)
 
 
@@ -28,6 +28,7 @@ def list_all():
 def search_for():
     name = request.form["character_name"]
     character = search(name)
-    return render_template("index.html", character = character)
+    comics = character["comics"]
+    return render_template("index.html", character = character, comics = comics)
 
 app.run()

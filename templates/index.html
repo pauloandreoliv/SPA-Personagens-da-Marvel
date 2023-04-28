@@ -42,11 +42,13 @@
       {%endfor%}
    </section>
    <h1>PESQUISAR</h1>
-   <section id="2">
+   <div class="pesquisar">
      <form action="{{url_for('search_for')}}" method="POST">
        <input type="text" id="character_name" name="character_name" placeholder="Escreva o nome do personagem em Inglês">
        <button><i class="fa-solid fa-magnifying-glass"></i></button>
      </form>
+   </div>
+   <section id="2">
      <div class="personagem_pesquisado">
         <div class="topo_personagem">
           <div class="imagem_personagem" style="background-image: url({{character["thumbnail"]}});"></div>
@@ -56,7 +58,9 @@
         <div class="quadrinhos">
           <h3><i class="fa-solid fa-book-open"></i> Quadrinhos</h3>
           <ol>
-            <li></li>
+            {%for comic in comics%}
+            <li>{{comic["name"]}}</li>
+	    {%endfor%}
           </ol>
         </div>
      </div>
