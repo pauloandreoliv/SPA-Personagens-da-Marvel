@@ -26,11 +26,21 @@
       <form action="{{url_for('back')}}" method="POST">
       	<button type="submit" name="back" id="back"><i class="fa fa-arrow-left"></i></button>
       </form>
+      <form action="{{url_for('list_all')}}" method="POST">
+      	<button type="submit" name="list_all" id="list_all"><i class="fa fa-list"></i></button>
+      </form>
       <form action="{{url_for('advance')}}" method="POST">
       	<button type="submit" name="advance" id="advance"><i class="fa-solid fa-arrow-right"></i></button>
       </form>
     </div>
     <section>
+      {%if list_all == True%}
+      <ol>
+      {%for character in characters%}
+	<li>{{character["name"]}}</li>
+      {%endfor%}
+      </ol>
+      {%else%}
       {%for character in characters%}
       <div class="personagem">
        <div class="topo_personagem">
@@ -41,6 +51,7 @@
        <a href="https://google.com/search?q={{character["name"]}}+Marvel" target="_blank"><div class="btn_buscargoogle"><i class="fa-brands fa-google"></i> BUSCAR NO GOOGLE</div></a>
       </div>
       {%endfor%}
+      {%endif%}
    </section>
    <h1 id="2">PESQUISAR</h1>
    <div class="pesquisar">

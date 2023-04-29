@@ -33,10 +33,7 @@ def listing_all(offset, past_requests, characters):
     
     while cont < len(results_list) and past_requests < number_requests:
         name = results_list[cont]["name"]
-        path_thumbnail, extension_thumbnail = results_list[cont]["thumbnail"]["path"], results_list[cont]["thumbnail"]["extension"]
-        thumbnail = path_thumbnail + "." + extension_thumbnail
-
-        character = {"name": name, "thumbnail": thumbnail}
+        character = {"name": name}
         characters.append(character)
 
         if cont == 99:

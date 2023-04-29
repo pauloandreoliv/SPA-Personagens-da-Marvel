@@ -25,11 +25,11 @@ def advance():
     characters = listing(offset)
     return render_template("index.html", characters = characters)
 
-'''@app.route("/list_all", methods=["POST"])
+@app.route("/list_all", methods=["POST"])
 def list_all():
     list_all = True
     characters = listing_all(0,0,[])
-    return render_template("index.html", characters = characters, list_all = list_all)'''
+    return render_template("index.html", characters = characters, list_all = list_all)
 
 @app.route("/search_for", methods=["POST"])
 def search_for():
