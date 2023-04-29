@@ -33,8 +33,7 @@ def listing_all(offset, past_requests, characters):
     
     while cont < len(results_list) and past_requests < number_requests:
         name = results_list[cont]["name"]
-        character = {"name": name}
-        characters.append(character)
+        characters.append(name)
 
         if cont == 99:
             past_requests += 1
