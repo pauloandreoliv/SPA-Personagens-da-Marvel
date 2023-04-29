@@ -12,6 +12,8 @@ O projeto é uma SPA (Single Page Application) que exibe dados a partir de requi
 
 * Avançar a visualização dos personagens (paginação)
 
+* Recuar a visualização dos personagens (paginação)
+
 * Pesquisar personagens de forma individual, visualizando sua foto, descrição e lista de quadrinhos (quando disponível)
 
 * Buscar o personagem no Google
@@ -60,12 +62,12 @@ Realize a instalação das bibliotecas através do uso de pip:
 
 ```pip install request```
 
-É possível ter acesso a todos os requerimentos da aplicação no arquivo [requirements.txt](/requirements.txt)
+Caso deseje realizar o deploy de forma remota (servidor web) em uma plataforma com suporte para Python, é possível ter acesso a todos os requerimentos da aplicação no arquivo [requirements.txt](/requirements.txt)
 
 OBS: Caso deseje trocar a chave da API pela sua, é possível realizar a alteração no arquivo `consumer.py` nas variáveis `public_key` e `private_key`.
 
-## Imagens
-
+## Demonstração
+https://user-images.githubusercontent.com/104461343/235314687-2dbe9a04-b20b-404a-9a79-fcbea2fe211c.mp4
 
 ## API da Marvel
 
