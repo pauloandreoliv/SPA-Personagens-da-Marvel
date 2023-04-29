@@ -6,9 +6,9 @@ O projeto é uma SPA (Single Page Application) que exibe dados a partir de requi
 
 ## Funcionalidades:
 
-* Ver todos os personagens, suas descrições e imagens (quando disponíveis)
+* Ver lista com todos os personagens
 
-* Visualizar apenas alguns personagens (paginação)
+* Visualizar apenas alguns personagens com suas imagens e descrições
 
 * Avançar a visualização dos personagens (paginação)
 
