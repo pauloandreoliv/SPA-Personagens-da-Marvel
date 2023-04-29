@@ -7,8 +7,8 @@ function redirecionar(){
     window.location.href = "/advance#1";
   }
 
-  if (caminho == "/list_all"){
-    window.location.href = "/list_all#1";
+  if (caminho == "/back"){
+    window.location.href = "/back#1";
   }
   
   if (caminho == "/search_for"){

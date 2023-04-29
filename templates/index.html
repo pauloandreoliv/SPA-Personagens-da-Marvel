@@ -23,8 +23,8 @@
   <main>
     <h1 id="1">PERSONAGENS</h1>
     <div class="botoes">
-      <form action="{{url_for('list_all')}}" method="POST">
-      	<button type="submit" name="list_all" id="list_all"><i class="fa fa-list"></i></button>
+      <form action="{{url_for('back')}}" method="POST">
+      	<button type="submit" name="back" id="back"><i class="fa fa-arrow-left"></i></button>
       </form>
       <form action="{{url_for('advance')}}" method="POST">
       	<button type="submit" name="advance" id="advance"><i class="fa-solid fa-arrow-right"></i></button>
@@ -33,12 +33,12 @@
     <section>
       {%for character in characters%}
       <div class="personagem">
-        <div class="topo_personagem">
-        <div class="imagem_personagem" style="background-image: url({{character["thumbnail"]}});"></div>
-        </div>
-        <div class="nome_personagem">{{character["name"]}}</div>
-        <div class="desc_personagem">{{character["description"]}}</div>
-        <a href="https://www.google.com/search?q={{character["name"]}}"><div class="btn_buscargoogle"><i class="fa-brands fa-google"></i> BUSCAR NO GOOGLE</div></a>
+       <div class="topo_personagem">
+       <div class="imagem_personagem" style="background-image: url({{character["thumbnail"]}});"></div>
+       </div>
+       <div class="nome_personagem">{{character["name"]}}</div>
+       <div class="desc_personagem">{{character["description"]}}</div>
+       <a href="https://google.com/search?q={{character["name"]}}+Marvel" target="_blank"><div class="btn_buscargoogle"><i class="fa-brands fa-google"></i> BUSCAR NO GOOGLE</div></a>
       </div>
       {%endfor%}
    </section>

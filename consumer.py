@@ -24,35 +24,19 @@ def request(offset,limit,name):
 
 
 def listing_all(offset, past_requests, characters):
-    past_requests = past_requests
-
-    characters = characters
-    
     data_list = request(offset,100,"")
-
     results_list = data_list["results"]
     total = data_list["total"]
-
-    number_requests = total / 100
-    number_requests = math.ceil(number_requests)
+    number_requests = math.ceil(total/100)
 
     cont = 0
     
     while cont < len(results_list) and past_requests < number_requests:
         name = results_list[cont]["name"]
-        description = results_list[cont]["description"]
-        path_thumbnail = results_list[cont]["thumbnail"]["path"]
-        extension_thumbnail = results_list[cont]["thumbnail"]["extension"]
+        path_thumbnail, extension_thumbnail = results_list[cont]["thumbnail"]["path"], results_list[cont]["thumbnail"]["extension"]
         thumbnail = path_thumbnail + "." + extension_thumbnail
 
-        if description == "":
-            description = "Character has no description."
-        
-        character = {}
-        character["name"] = name
-        character["description"] = description
-        character["thumbnail"] = thumbnail
-        
+        character = {"name": name, "thumbnail": thumbnail}
         characters.append(character)
 
         if cont == 99:
