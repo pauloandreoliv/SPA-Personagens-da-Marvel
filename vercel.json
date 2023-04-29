@@ -10,5 +10,8 @@
       "src": "/(.*)", 
       "dest": "/app.py" 
     }
-  ]
+  ],
+  "@vercel/python": {
+    "runtime": "python3.9"
+  }
 }
