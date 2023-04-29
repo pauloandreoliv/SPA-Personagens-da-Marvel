@@ -80,6 +80,7 @@ h1 {
 }
 
 section {
+  min-height: 50vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
