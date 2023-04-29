@@ -70,4 +70,4 @@ OBS: Caso deseje trocar a chave da API pela sua, é possível realizar a altera�
 ## API da Marvel
 
 A API da Marvel é gratuita. Para utilizá-la é preciso ter uma conta e chaves (pública e privada).
-[Marvel for Developers](https://developers.marvel.com)
+[Marvel for Developers](https://developer.marvel.com)
