@@ -1,8 +1,8 @@
-# Single Page Application - Personagens da Marvel
+# Aplicação - Personagens da Marvel
 
 ## O que é?
 
-O projeto é uma SPA (Single Page Application) que exibe dados a partir de requisições à API da Marvel.
+O projeto é uma aplicação que exibe dados a partir de requisições à API da Marvel.
 
 ## Funcionalidades:
 
